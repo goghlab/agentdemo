@@ -1,12 +1,11 @@
-import Card from "@leafygreen-ui/card";
 import { Avatar, Format, AvatarSize} from "@leafygreen-ui/avatar";
 import {Spinner} from "@leafygreen-ui/loading-indicator";
-import Button from "@leafygreen-ui/button";
 import Icon from "@leafygreen-ui/icon";
 
 import "@copilotkit/react-ui/styles.css";
 import { AssistantMessageProps, Markdown } from "@copilotkit/react-ui";
 import { useCopilotChat } from "@copilotkit/react-core";
+import { Header } from "@/components/10x_chat/Header";
  
 export const CustomAssistantMessage = (props: AssistantMessageProps) => {
   const { message, isLoading, isGenerating, subComponent, rawData} = props;
@@ -17,11 +16,11 @@ export const CustomAssistantMessage = (props: AssistantMessageProps) => {
         {!subComponent && <img src="/V.png" alt="V Sir" className="w-10 h-10 rounded-full" />}
         {subComponent ? 
           subComponent : 
-          <Card className="flex w-full justify-start flex-col">
+          <div className="flex w-full justify-start flex-col">
             {message && <Markdown content={message || ""} /> }
             {isLoading && <div className="flex justify-start"><Spinner /></div>}
             {!isGenerating && !isLoading && <ResponseButtons id={id} />}
-          </Card>
+          </div>
         }
       </div>
     </div>
@@ -35,12 +34,12 @@ const ResponseButtons = ({ id }: { id: string }) => {
     return (
         <div className="flex gap-2 items-center mt-6">
             <p className="text-gray-500">How was this response?</p>
-            <Button size={"xsmall"} onClick={() => alert("Thumbs up sent")}><Icon glyph="ThumbsUp" /></Button>
-            <Button size={"xsmall"} onClick={() => alert("Thumbs down sent")}><Icon glyph="ThumbsDown" /></Button>
+            <div><Icon glyph="ThumbsUp" /></div>
+            <div><Icon glyph="ThumbsDown" /></div>
             {isLastMessage && 
                 <div className="flex gap-2 items-center">
                     |
-                    <Button size={"xsmall"} onClick={() => reloadMessages()}><Icon glyph="Refresh" /></Button>
+                    <div><Icon glyph="Refresh" /></div>
                 </div>
             }
         </div>

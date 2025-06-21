@@ -1,30 +1,17 @@
 import {
   CopilotRuntime,
-  OpenAIAdapter,
+  GoogleGenerativeAIAdapter,
   copilotRuntimeNextJSAppRouterEndpoint,
 } from "@copilotkit/runtime";
-import OpenAI from "openai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest } from "next/server";
-import { langGraphPlatformEndpoint } from "@copilotkit/runtime";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-const serviceAdapter = new OpenAIAdapter({ openai } as any);
+// 只用 Google Gemini
+const serviceAdapter = new GoogleGenerativeAIAdapter({
+  model: "gemini-1.5-pro",
+} as any); // 用 as any 兼容类型
 
-const deploymentUrl = process.env.LGC_DEPLOYMENT_URL as string
-const langsmithApiKey = process.env.LANGSMITH_API_KEY as string
-
-const runtime = new CopilotRuntime({
-  remoteEndpoints: [
-    langGraphPlatformEndpoint({
-      deploymentUrl,
-      langsmithApiKey,
-      agents: [{
-        name: 'ai_researcher',
-        description: 'Search agent.',
-      }],
-    }),
-  ],
-});
+const runtime = new CopilotRuntime({});
 
 export const POST = async (req: NextRequest) => {
   const { handleRequest } = copilotRuntimeNextJSAppRouterEndpoint({

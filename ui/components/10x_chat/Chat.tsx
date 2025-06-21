@@ -1,8 +1,8 @@
 import { CopilotChat } from "@copilotkit/react-ui";
-import { Header } from "@/components/chat/Header";
-import { CustomUserMessage } from "@/components/chat/UserMessage";
-import { CustomAssistantMessage } from "@/components/chat/AssistantMessage";
-import { CustomResponseButton } from "./chat/ResponseButton";
+import { Header } from "@/components/10x_chat/Header";
+import { CustomUserMessage } from "@/components/10x_chat/UserMessage";
+import { CustomAssistantMessage } from "@/components/10x_chat/AssistantMessage";
+import { CustomResponseButton } from "@/components/10x_chat/ResponseButton";
 import ContactInfo from "./generative-ui/ContactInfo";
 import { useCopilotAction } from "@copilotkit/react-core";
 import { Footer } from "./Footer";

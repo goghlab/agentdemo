@@ -33,6 +33,9 @@ importers:
       '@leafygreen-ui/avatar':
         specifier: ^3.0.1
         version: 3.0.1(@leafygreen-ui/leafygreen-provider@5.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      '@leafygreen-ui/badge':
+        specifier: ^10.0.1
+        version: 10.0.1(@leafygreen-ui/leafygreen-provider@5.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       '@leafygreen-ui/button':
         specifier: ^24.0.1
         version: 24.0.1(@leafygreen-ui/leafygreen-provider@5.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
@@ -1000,6 +1003,11 @@ packages:
 
   '@leafygreen-ui/avatar@3.0.1':
     resolution: {integrity: sha512-LgARD304uFUKj1ukbHrAJx4ytL77qjDBW2C5waCqxjIl5nHB24B+k6BFCB+lWvrV4iYnPBpc0ThwWxAQXFlrUA==}
+    peerDependencies:
+      '@leafygreen-ui/leafygreen-provider': ^5.0.0
+
+  '@leafygreen-ui/badge@10.0.1':
+    resolution: {integrity: sha512-vBrrVX9yEfKSxvCRPKMxLujEfJCr4L4BNMDzFfFyu5o5y4jlw+oiETa5k+ZopH8prwGiLStvBpa3IMKhCHVpog==}
     peerDependencies:
       '@leafygreen-ui/leafygreen-provider': ^5.0.0
 
@@ -6048,6 +6056,17 @@ snapshots:
       - react
       - supports-color
 
+  '@leafygreen-ui/badge@10.0.1(@leafygreen-ui/leafygreen-provider@5.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@leafygreen-ui/emotion': 5.0.0
+      '@leafygreen-ui/leafygreen-provider': 5.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@leafygreen-ui/lib': 15.0.0(react@18.2.0)
+      '@leafygreen-ui/palette': 5.0.0
+      '@leafygreen-ui/tokens': 3.1.0(react@18.2.0)
+    transitivePeerDependencies:
+      - react
+      - supports-color
+
   '@leafygreen-ui/button@24.0.1(@leafygreen-ui/leafygreen-provider@5.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@leafygreen-ui/emotion': 5.0.0
@@ -8615,7 +8634,7 @@ snapshots:
       isstream: 0.1.2
       jsonwebtoken: 9.0.2
       mime-types: 2.1.35
-      retry-axios: 2.6.0(axios@1.7.9(debug@4.3.6))
+      retry-axios: 2.6.0(axios@1.7.9)
       tough-cookie: 4.1.4
     transitivePeerDependencies:
       - supports-color
@@ -10360,7 +10379,7 @@ snapshots:
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
-  retry-axios@2.6.0(axios@1.7.9(debug@4.3.6)):
+  retry-axios@2.6.0(axios@1.7.9):
     dependencies:
       axios: 1.7.9(debug@4.3.6)
 
